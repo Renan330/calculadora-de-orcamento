@@ -1,0 +1,195 @@
+/* --- ESTILOS GERAIS E VARIÁVEIS --- */
+:root {
+    --cor-fundo: #f4f7f9;
+    --cor-container: #ffffff;
+    --cor-primaria: #4a90e2;
+    --cor-texto-principal: #333;
+    --cor-texto-secundario: #777;
+    --cor-borda: #e0e0e0;
+    --cor-sucesso: #28a745;
+    --cor-perigo: #dc3545;
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+/* --- CONTAINER PRINCIPAL --- */
+.app-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--cor-container);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+}
+
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.25rem;
+}
+
+header p {
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+main {
+    padding: 2rem;
+}
+
+/* --- SEÇÃO DE RESUMO --- */
+.summary-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    background-color: var(--cor-fundo);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+    text-align: center;
+}
+
+.summary-card h4 {
+    color: var(--cor-texto-secundario);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.summary-card p {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+#total-income { color: var(--cor-primaria); }
+#total-expenses { color: var(--cor-perigo); }
+#balance { color: var(--cor-sucesso); }
+
+/* Classes para o saldo */
+.positive { color: var(--cor-sucesso) !important; }
+.negative { color: var(--cor-perigo) !important; }
+
+/* --- SEÇÃO DE INPUTS --- */
+.input-section {
+    margin-bottom: 2rem;
+    background-color: var(--cor-fundo);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.income-input {
+    margin-bottom: 1.5rem;
+}
+
+.income-input label, #expense-form h3 {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-add {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add:hover {
+    background-color: #357abd;
+}
+
+/* --- LISTA DE DESPESAS --- */
+.expense-list-section h2 {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: 0.5rem;
+}
+
+#expense-list {
+    list-style: none;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.expense-item span {
+    font-weight: 600;
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: var(--cor-perigo);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-delete:hover {
+    transform: scale(1.2);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 600px) {
+    body {
+        padding: 0.5rem;
+    }
+    main {
+        padding: 1rem;
+    }
+    .form-group {
+        flex-direction: column;
+    }
+}
